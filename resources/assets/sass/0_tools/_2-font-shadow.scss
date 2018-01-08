@@ -1,0 +1,14 @@
+$color-base: $main-color;
+$shadow-range: 20;
+
+// Shadow Function
+@function flatShadow($range) {
+  $shadow: '';
+  @for $i from 1 through $range {
+    $shadow: $shadow + '#{$i}px #{$i}px #{darken($color-base, 15%)}';
+      @if $i < $range {
+        $shadow: $shadow + ', ';
+      }
+  }
+  @return unquote($shadow);
+}

@@ -1,0 +1,403 @@
+.picture-wrap
+	position: relative
+	height: 100%
+	z-index: 20
+	+transition(200ms width ease-in-out)
+	+breakpoint(xs)
+		height: 90vh
+	+breakpoint(xxs)
+		height: 90vh
+	+breakpoint(xxxs)
+		height: 90vh
+
+
+	.title
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 40px
+		background-color: #fff
+		border-bottom: 1px solid rgba(#000, 0.1)
+		box-shadow: 0 5px 10px 0 rgba(#000, 0.05)
+		padding: 10px
+		z-index: 12
+		.admin-functions
+			width: 80px
+			height: 100%
+			float: left
+			position: absolute
+			right: 0
+			top: 0
+			cursor: pointer
+			+align-items(stretch)
+			+display(flex)
+			+flex-direction(row)
+			+justify-content(flex-start)
+			a
+				width: 100%
+				float: left
+				position: relative
+				height: 100%
+				position: absolute
+				cursor: pointer
+				color: #fff 
+			.edit-button, .delete-button
+				height: 100%
+				position: relative
+				+flex(2)
+			.edit-button
+				&:hover
+					background-color: rgba(#000, 0.07) 
+			.delete-button
+				background-color: rgba(200, 10, 20, 0.8) 
+				color: #fff 
+				&:hover
+					background-color: rgba(200, 10, 20, 1) 
+			i
+				position: absolute
+				top: 50%
+				left: 50%
+				+transform(translate(-50%, -50%))
+		.votes
+			width: 70px
+			height: 30px
+			background-color: $main-color
+			-webkit-border-radius: 3px 
+			border-radius: 3px 
+			color: #fff
+			font-weight: 600 
+			padding: 5px 0
+			position: absolute
+			text-align: center
+			top: 50%
+			text-align: center
+			+transform(translateY(-50%))
+			+breakpoint(xs)
+				width: 60px
+			+breakpoint(xxs)
+				width: 60px
+			+breakpoint(xxxs)
+				width: 60px
+				font-size: 0.9em
+				padding: 6px 0 0
+			i
+				margin-right: 4px
+				font-size: 1em
+			.no-votes
+				width: 20px
+				height: 15px
+				display: block
+				background-color: rgba(#fff, 0.3) 
+		h2
+			position: absolute
+			width: calc(100% - 110px)
+			+ellipsis(calc(100% - 110px))
+			margin: 0
+			padding: 0
+			font-size: 1.2em 
+			top: 50%
+			left: 90px
+			+transform(translateY(-50%))
+			+breakpoint(sm)
+				width: calc(100% - 100px)
+				+ellipsis(calc(100% - 100px))
+				left: 85px
+			+breakpoint(xs)
+				width: calc(100% - 100px)
+				+ellipsis(calc(100% - 100px))
+				left: 80px
+			+breakpoint(xxs)
+				width: calc(100% - 100px)
+				+ellipsis(calc(100% - 100px))
+				left: 80px
+			+breakpoint(xxxs)
+				width: calc(100% - 100px)
+				+ellipsis(calc(100% - 100px))
+				left: 80px
+			span
+				animation-duration: 1s
+				animation-fill-mode: forwards
+				animation-iteration-count: infinite
+				animation-name: placeHolderShimmer
+				animation-timing-function: linear
+				background: #f6f7f8
+				background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%)
+				background-size: 800px 104px
+				height: 20px
+				width: 500px
+				position: relative
+				display: block
+				float: left
+		.hide-comments
+			display: none
+	.bottom-bar
+		position: absolute
+		width: 100%
+		height: 40px
+		bottom: 0
+		left: 0
+		background-color: #fff
+		z-index: 50
+		box-shadow: 0 -5px 10px 0 rgba(#000, 0.1)
+		.infos
+			height: 100%
+			position: relative
+			float: left
+			+breakpoint(xl)
+				width: 35%
+				display: inline
+			+breakpoint(lg)
+				width: 40%
+				display: inline
+			+breakpoint(md)
+				width: 50%
+				display: inline
+			+breakpoint(sm)
+				width: 50%
+				display: inline
+			+breakpoint(xs)
+				display: none
+			+breakpoint(xxs)
+				display: none
+			+breakpoint(xxxs)
+				display: none
+			ul.quick-info
+				width: 100%
+				height: 100%
+				position: relative
+				float: left
+				padding: 0
+				margin: 0
+				list-style: none
+				+align-items(stretch)
+				+display(flex)
+				+flex-direction(row)
+				+justify-content(flex-start)
+				li
+					+flex(1)
+					position: relative
+					height: 100%
+					float: left
+					p
+						margin: 0
+						padding: 0
+						position: absolute
+						width: 100%
+						top: 50%
+						left: 50%
+						text-align: center
+						+transform(translate(-50%, -50%))
+						font-size: 0.9em
+						color: rgba(#000, 0.5)  
+						i
+							font-size: 1em
+							margin-right: 5px
+						 
+		ul.sharing
+			float: right
+			position: relative
+			height: 100%
+			padding: 0
+			margin: 0
+			list-style: none
+			+align-items(stretch)
+			+display(flex)
+			+flex-direction(row)
+			+justify-content(flex-start)
+			+breakpoint(xl)
+				width: 35%
+			+breakpoint(lg)
+				width: 35%
+			+breakpoint(md)
+				width: 35%
+			+breakpoint(sm)
+				width: 35%
+			+breakpoint(xs)
+				width: 100%
+			+breakpoint(xxs)
+				width: 100%
+			+breakpoint(xxxs)
+				width: 100%
+			li
+				+flex(1)
+				position: relative
+				height: 100%
+				float: left
+				cursor: pointer
+				&.facebook
+					background-color: #3b5998 
+					&:hover
+						background-color: darken(#3b5998, 5%) 
+					a
+						color: #fff
+						i
+							float: left
+							font-size: 1.2em
+							margin-right: 10px
+							margin-top: 2px 
+				&.messenger
+					background-color: #0084ff
+					+breakpoint(xl)
+						display: none
+					+breakpoint(lg)
+						display: none
+					+breakpoint(md)
+						display: none
+					+breakpoint(sm)
+						display: none
+					+breakpoint(xs)
+						display: inline
+					+breakpoint(xxs)
+						display: inline
+					+breakpoint(xxxs)
+						display: inline
+					&:hover
+						background-color: darken(#0084ff, 5%) 
+					.fb-send
+						position: absolute
+						height: 100% !important
+						width: 100% !important
+						left: 0 !important
+						top: 0 !important
+						z-index: 500
+					a
+						color: #fff  
+						.inside
+							width: 145px
+							img
+								width: 15px
+								height: 15px
+								float: left
+								margin-right: 10px
+								margin-top: 2px
+				a
+					float: left
+					width: 100%
+					height: 40px
+					float: left
+					position: relative
+					.inside
+						position: absolute
+						width: 140px
+						height: 20px
+						top: 50%
+						left: 50%
+						+transform(translate(-50%, -50%))
+						p
+							float: left
+							font-size: 0.83em
+							font-weight: 700
+							margin-top: 2px  
+	.picture
+		width: 100%
+		float: left
+		top: 40px
+		left: 0
+		position: absolute
+		height: calc(100% - 40px)
+		background-color: #FFF
+		-webkit-border-radius: 3px 
+		border-radius: 3px
+		z-index: 10
+		+breakpoint(xs)
+			height: calc(100% - 40px)
+		.show-picture
+			position: absolute
+			height: calc(100% - 40px)
+			width: 100%
+			top: calc(50% - 0px)
+			left: 50%
+			+transform(translate(-50%, calc(-50% - 20px)))
+			-webkit-background-size: contain 
+			-o-background-size: contain 
+			background-size: contain 
+			background-position: center center
+			background-repeat: no-repeat 
+			+breakpoint(xs)
+				top: calc(50% + 10px)
+			+breakpoint(xxs)
+				top: calc(50% + 10px)
+			+breakpoint(xxxs)
+				top: calc(50% + 10px)		
+		.empty
+			position: absolute
+			top: 50%
+			left: 50%
+			+transform(translate(-50%, -50%))
+			text-align: center
+			h3
+				font-size: 3em
+				font-weight: 300
+				color: rgba(#000, 0.6)
+				margin-bottom: 20px
+				+breakpoint(xs)
+					font-size: 2em 
+				+breakpoint(xxs)
+					font-size: 2em 
+				+breakpoint(xxxs)
+					font-size: 2em 
+			h4
+				font-size: 2em
+				font-weight: 300
+				color: rgba(#000, 0.6)  
+				+breakpoint(xs)
+					font-size: 1.5em 
+				+breakpoint(xxs)
+					font-size: 1.5em 
+				+breakpoint(xxxs)
+					font-size: 1.5em 
+
+
+	.control
+		position: absolute
+		top: 0
+		width: 100px
+		height: 100% 
+		z-index: 10
+		cursor: pointer
+		+transition(80ms all ease-in-out)
+		+breakpoint(xs)
+			padding: 5px 10px
+			font-size: 1.4em
+		+breakpoint(xxs)
+			padding: 5px 10px
+			font-size: 1.4em
+		+breakpoint(xxxs)
+			padding: 5px 10px
+			font-size: 1.4em
+		&:hover
+			i
+				box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
+				background-color: lighten($main-color, 3%) 
+		&:active
+			i
+				box-shadow: 0 2px 10px 0 rgba(#000, 0.1) 
+				background-color: darken($main-color, 1%) 
+
+		i
+			position: absolute
+			top: 50%
+			background-color: $main-color
+			font-size: 2em
+			color: #FFF
+			padding: 20px
+			+transform(translateY(-50%)) 
+			+breakpoint(xs)
+				font-size: 1.6em
+				padding: 15px
+			+breakpoint(xxs)
+				font-size: 1.4em
+				padding: 10px
+			+breakpoint(xxxs)
+				font-size: 1.4em
+				padding: 10px
+
+		&.dislike
+			left: 0
+			i
+				left: 0
+		&.like
+			right: 0
+			i
+				right: 0

@@ -1,0 +1,216 @@
+.comments-wrap
+	position: relative
+	height: 100%
+	max-height: 100%
+	padding: 0
+	background-color: #FFF
+	border-left: 1px solid rgba(#000, 0.1)
+	opacity: 1
+	+transition(200ms all ease-in-out)
+	+breakpoint(xs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
+	+breakpoint(xxs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
+	+breakpoint(xxxs)
+		height: auto
+		float: left
+		border-top: 1px solid rgba(#000, 0.1)
+		margin-top: 20px
+	.loading
+		height: calc(100% - 60px) 
+		background-color: rgba(#fff, 0.7)
+		z-index: 11  
+		transition: 200ms all ease-in-out
+	.comments-header
+		width: 100%
+		float: left
+		margin: 0 0px 10px 0
+		padding: 0 0px 10px 0
+		border-bottom: 1px solid rgba(#000, 0.1)
+		box-shadow: 0 5px 10px 0 rgba(#000, 0.05)
+		padding: 10px 15px
+		position: relative
+		z-index: 12
+		height: 40px
+		h3
+			float: left
+			margin: 0
+			padding: 0
+			font-size: 1.2em 
+	.add-comment
+		position: absolute
+		width: 100%
+		height: 60px
+		bottom: 0
+		left: 0
+		border-top: 1px solid rgba(#000, 0.2)
+		box-shadow: 0 -5px 10px 0 rgba(#000, 0.07)
+		textarea
+			position: absolute
+			width: 100%
+			max-width: 100%
+			max-height: 100% 
+			height: 100%
+			border: none
+			outline: none
+			padding: 10px 60px 10px 15px
+		button
+			+size(40px)
+			position: absolute
+			right: 10px
+			top: 50%
+			+transform(translateY(-50%))
+			border: none
+			box-shadow: none 
+			-webkit-border-radius: 100%
+			border-radius: 100%
+			background-color: $main-color 
+			outline-style: none
+			color: #FFF 
+		.btn
+			outline-style: none
+			i
+				position: absolute
+				top: 50%
+				left: 52%
+				+transform(translate(-50%, -50%))
+	.comments
+		position: absolute
+		z-index: 10
+		height: calc(100% - 39px - 60px)
+		max-height: calc(100% - 39px - 60px) 
+		min-height: 200px
+		padding: 0px 0px
+		margin: 0px 0 0
+		list-style: none
+		-ms-overflow-y: auto
+		overflow-y: auto
+		bottom: 60px
+		box-shadow: 10px 0px 10px 0 rgba(#000, 0.02) inset
+		width: 100%
+		+breakpoint(xs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
+		+breakpoint(xxs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
+		+breakpoint(xxxs)
+			height: auto
+			position: static
+			overflow: visible
+			float: left
+		.no-comments
+			position: absolute
+			top: 50%
+			width: 100%
+			+transform(translateY(-50%))
+			text-align: center
+			font-weight: 600
+			color: rgba(#000, 0.4) 
+			font-size: 0.9em  
+		.comment
+			width: 100%
+			float: left
+			border-bottom: 1px solid rgba(#000, 0.07)
+			padding: 10px 15px
+			+transition(150ms opacity ease-in-out)
+			&:first-child
+				padding-top: 10px
+			&:last-child
+				border-bottom: none 
+			&:nth-child(even)
+				background-color: rgba(#000, 0.03)
+			&.new
+				opacity: 0.2
+				+animation(newComment 900ms ease-in-out)
+				+animation-iteration-count(infinite)
+				+animation-fill-mode(forwards)
+			.uporabnik
+				position: relative
+			.uporabnik-info
+				position: absolute
+				left: 0
+				top: -70px
+				width: 150px
+				height: 70px
+				background-color: #FFF
+				border: 1px solid rgba(#000, 0.1)
+				-webkit-border-radius: 3px 
+				border-radius: 3px 
+				z-index: 100
+				opacity: 1 
+				&:after
+					content: "" 
+					position: absolute
+					bottom: -7px
+					left: 20px
+					+triangle(12px, rgba(#000, 0.05), down)
+			.top
+				width: 100%
+				float: left
+				margin-bottom: 5px
+				.userInfoPopup
+					position: absolute
+					top: -50px
+					left: 0	
+					background-color: #FFF 	
+					padding: 10px
+					box-shadow: 0 5px 20px 0 rgba(#000, 0.3) 	
+				p
+					margin: 0
+					padding: 0
+					float: left
+					width: 100%
+					font-size: 0.9em
+					position: relative
+					a
+						color: $main-color
+						font-weight: 700
+						&:hover
+						 color: darken($main-color, 5%) 
+						span
+							width: 100px
+							height: 10px
+							background-color: rgba(#000, 0.4)
+							display: block
+							float: left 
+							margin-top: 2px
+							margin-bottom: 4px
+					small
+						float: right
+						color: rgba(#000, 0.6) 
+						span
+							width: 100px
+							height: 10px
+							background-color: rgba(#000, 0.4)
+							display: block
+							float: left 
+							margin-top: 2px
+							margin-bottom: 4px
+					.odgovori
+						margin-left: 10px
+			.content
+				width: 100%
+				float: left
+				p
+					width: 100%
+					float: left
+					font-size: 0.9em
+					margin: 0
+					padding: 0 
+
++keyframes(newComment)
+	0%
+		opacity: 0.2
+	100%
+		opacity: 0.6
